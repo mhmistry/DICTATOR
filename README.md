@@ -48,7 +48,6 @@ The user provides information related to a hypothetical password:
 * Date of birth
 * Additional personal information
 
----
 
 ## Step 2: Policy Inference
 
@@ -60,7 +59,6 @@ Examples:
 * Required character types
 * Common platform restrictions
 
----
 
 ## Step 3: Database Retrieval
 
@@ -73,7 +71,6 @@ Filtering is based on:
 * Character types
 * User-related information
 
----
 
 ## Step 4: AI Variant Generation
 
@@ -86,7 +83,6 @@ Examples:
 * Character substitutions
 * Mixed patterns
 
----
 
 ## Step 5: Dictionary Generation
 
@@ -107,7 +103,6 @@ git clone <repo-url>
 cd DICTATOR
 ```
 
----
 
 ## Create Virtual Environment
 
@@ -127,7 +122,6 @@ Linux/Mac:
 source venv/bin/activate
 ```
 
----
 
 ## Install Dependencies
 
@@ -135,7 +129,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
 
 ## Run Ollama
 
@@ -149,7 +142,6 @@ Pull model:
 ollama pull llama3.1:8b
 ```
 
----
 
 ## Start Server
 
@@ -189,7 +181,6 @@ DICTATOR automatically detects and loads all `.txt` files inside the `wordlists/
 
 No manual configuration is required.
 
----
 
 ## Merge Wordlists
 
@@ -210,7 +201,6 @@ This automatically:
 master_wordlist.txt
 ```
 
----
 
 ## Load Into Database
 
