@@ -1,4 +1,3 @@
-# generator/forms.py
 from django import forms
 
 class PasswordForm(forms.Form):

@@ -167,19 +167,60 @@ http://127.0.0.1:8000/
 
 # Wordlist Setup
 
+Create a folder named:
+
+```plaintext
+wordlists/
+```
+
+Place all password wordlists inside this folder.
+
+Example:
+
+```plaintext
+wordlists/
+├── rockyou.txt
+├── common_1m.txt
+├── darkweb_10k.txt
+├── names.txt
+```
+
+DICTATOR automatically detects and loads all `.txt` files inside the `wordlists/` folder.
+
+No manual configuration is required.
+
+---
+
 ## Merge Wordlists
+
+Run:
 
 ```bash
 python merge_wordlists.py
 ```
 
+This automatically:
+
+* Detects all `.txt` files in `wordlists/`
+* Merges them
+* Removes duplicates
+* Creates:
+
+```plaintext
+master_wordlist.txt
+```
+
 ---
 
-## Load into Database
+## Load Into Database
+
+Run:
 
 ```bash
 python manage.py load_wordlist master_wordlist.txt
 ```
+
+This imports the merged password dataset into SQLite for fast querying.
 
 ---
 
