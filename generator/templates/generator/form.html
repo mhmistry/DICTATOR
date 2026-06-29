@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICTATOR - Custom Password Dictionary Generator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <canvas id="canvas-background"></canvas>
+
+    <div class="container">
+        <div class="glass-card">
+            <h1>DICTATOR</h1>
+            <p class="subtitle">Advanced Password List Generator for Educational Security Testing</p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="{{ form.platform.id_for_label }}">{{ form.platform.label }}</label>
+                        {{ form.platform }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.min_length.id_for_label }}">{{ form.min_length.label }}</label>
+                        {{ form.min_length }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.max_length.id_for_label }}">{{ form.max_length.label }}</label>
+                        {{ form.max_length }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.actual_length.id_for_label }}">{{ form.actual_length.label }}</label>
+                        {{ form.actual_length }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.specific_chars.id_for_label }}">{{ form.specific_chars.label }}</label>
+                        {{ form.specific_chars }}
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>{{ form.char_types.label }}</label>
+                        <div class="checkbox-group">
+                            {% for checkbox in form.char_types %}
+                            <div class="checkbox-item">
+                                {{ checkbox.tag }}
+                                <label for="{{ checkbox.id_for_label }}">{{ checkbox.choice_label }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.owner_name.id_for_label }}">{{ form.owner_name.label }}</label>
+                        {{ form.owner_name }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="{{ form.dob.id_for_label }}">{{ form.dob.label }}</label>
+                        {{ form.dob }}
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="{{ form.others.id_for_label }}">{{ form.others.label }}</label>
+                        {{ form.others }}
+                    </div>
+                </div>
+
+                <button type="submit">Initialize Generation Sequence</button>
+            </form>
+
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> This tool is intended for educational purposes and authorized security
+                    testing only. Unauthorized use against systems you do not own is illegal.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+venv/
+.dist/
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+.idea/
+.vscode/
+*.log
+master_wordlist.txt
+wordlists/
