@@ -211,15 +211,3 @@ python manage.py load_wordlist master_wordlist.txt
 ```
 
 This imports the merged password dataset into SQLite for fast querying.
-
----
-
-# Educational Disclaimer
-
-This project is strictly intended for educational and research purposes.
-
-DICTATOR demonstrates how attackers may use personal information and password patterns to generate targeted password dictionaries.
-
-No real password cracking is performed.
-
-The project exists solely to promote cybersecurity awareness and stronger password practices.
